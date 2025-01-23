@@ -22,7 +22,7 @@ export default function SignUp({ navigation }) {
     const uAccount = () => {
         createUserWithEmailAndPassword(authentication, email, password)
             .then(() => {
-                nav.navigate('Home')
+                navigation.navigate('HomeTabs')
 
                 setDoc(doc(database, "users", uid), {
                     username: name,
@@ -42,7 +42,7 @@ export default function SignUp({ navigation }) {
                 console.error(error);
             });
     };
-    const nav = useNavigation();
+    //const nav = useNavigation();
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <StatusBar />

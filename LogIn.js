@@ -18,7 +18,7 @@ export default function LogIn({ navigation }) {
     const loginUser = () => {
         signInWithEmailAndPassword(authentication, email, password)
             .then((val) => {
-                nav.replace('Home')
+                navigation.navigate('HomeTabs')
 
 
             })
@@ -28,7 +28,7 @@ export default function LogIn({ navigation }) {
             });
     }
 
-    const nav = useNavigation();
+    //const nav = useNavigation();
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <StatusBar />
@@ -82,6 +82,7 @@ export default function LogIn({ navigation }) {
                         <Text style={{ fontSize: 19, color: '#FFFFFF' }}>
                             LogIn
                         </Text>
+
                     </TouchableOpacity>
 
                     <View

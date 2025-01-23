@@ -2,27 +2,26 @@ import * as React from 'react';
 import { useState } from 'react'; 
 import { View, Text, StyleSheet, TouchableOpacity, Image, TextInput } from 'react-native';
 
-export default function Home({ navigation }) {
+export default function Vegetables() {
   const [searchTerm, setSearchTerm] = useState('');
-  
-  // Product List
-  const products = [
-    { id: '1', name: 'Fruits', image: require('./assets/selection/fruits-5.png') },
-    { id: '2', name: 'Vegetables', image: require('./assets/selection/Vegetable.png') },
-    { id: '3', name: 'Meat', image: require('./assets/selection/fish-and-meat.png') },
-    { id: '4', name: 'Dairy', image: require('./assets/selection/dairy.jpg') },
+
+
+  const fruits = [
+    { id: '1', name: 'tomato', image: require('./assets/icon.png') },
+    { id: '2', name: 'potato', image: require('./assets/icon.png') },
+    { id: '3', name: 'carrot', image: require('./assets/icon.png') },
+    { id: '4', name: 'onion', image: require('./assets/icon.png') },
   ];
 
   // Filter products based on search text
-  const filteredProducts = products.filter(product =>
-    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredFruits = fruits.filter(fruit =>
+    fruit.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
-    
     <View style={styles.container}>
-      <Text style={styles.title}> Grocery</Text>
-      
+      <Text style={styles.title}>Vegetables</Text>
+
       {/* Search bar with magnifying glass image*/}
       <View style={styles.searchContainer}>
         <Image 
@@ -36,15 +35,15 @@ export default function Home({ navigation }) {
           onChangeText={setSearchTerm}
         />
       </View>
-      
+
       {/* Show filtered products*/}
-      {filteredProducts.length > 0 ? (
+      {filteredFruits.length > 0 ? (
         <View style={styles.gridContainer}>
-          {filteredProducts.map((item) => (
+          {filteredFruits.map((item) => (
             <TouchableOpacity 
               key={item.id} 
               style={styles.button} 
-              onPress={() => navigation.navigate(item.name)}
+              onPress={() => alert(`You selected ${item.name}`)}
             >
               <Image source={item.image} style={styles.image} />
               <Text style={styles.buttonText}>{item.name}</Text>
@@ -72,7 +71,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     color:'#e3dac9',
     padding: 10,
-    
   },
   searchContainer: {
     flexDirection: 'row',
@@ -106,7 +104,7 @@ const styles = StyleSheet.create({
     width: '48%', 
     alignItems: 'center',
     marginVertical: 25,
-    elevation: 10, //shadow
+    elevation: 10, 
   },
   image: {
     width: 70, 
