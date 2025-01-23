@@ -1,34 +1,27 @@
 import * as React from 'react';
-import { useState } from 'react'; 
+import { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, TextInput } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Home({ navigation }) {
   const [searchTerm, setSearchTerm] = useState('');
-  
-  // Product List
+
   const products = [
-    { id: '1', name: 'Fruits', image: require('./assets/selection/fruits-5.png') },
-    { id: '2', name: 'Vegetables', image: require('./assets/selection/Vegetable.png') },
-    { id: '3', name: 'Meat', image: require('./assets/selection/fish-and-meat.png') },
-    { id: '4', name: 'Dairy', image: require('./assets/selection/dairy.jpg') },
+    { id: '1', name: 'Fruits', screen: 'Fruits', image: require('./assets/selection/fruits-5.png') },
+    { id: '2', name: 'Vegetables', screen: 'Vegetables', image: require('./assets/selection/veg.png') },
+    { id: '3', name: 'Meat', screen: 'Meat', image: require('./assets/selection/fish-and-meat.png') },
+    { id: '4', name: 'Dairy', screen: 'Dairy', image: require('./assets/selection/dairy.jpg') },
   ];
 
-  // Filter products based on search text
   const filteredProducts = products.filter(product =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
-    
     <View style={styles.container}>
-      <Text style={styles.title}> Grocery</Text>
-      
-      {/* Search bar with magnifying glass image*/}
+      <Text style={styles.title}>Grocery</Text>
       <View style={styles.searchContainer}>
-        <Image 
-          source={require('./assets/magnifying-icon.png')} 
-          style={styles.magnifyingGlass}
-        />
+        <Image source={require('./assets/magnifying-icon.png')} style={styles.magnifyingGlass} />
         <TextInput
           style={styles.searchBar}
           placeholder="search..."
@@ -36,16 +29,10 @@ export default function Home({ navigation }) {
           onChangeText={setSearchTerm}
         />
       </View>
-      
-      {/* Show filtered products*/}
       {filteredProducts.length > 0 ? (
         <View style={styles.gridContainer}>
           {filteredProducts.map((item) => (
-            <TouchableOpacity 
-              key={item.id} 
-              style={styles.button} 
-              onPress={() => navigation.navigate(item.name)}
-            >
+            <TouchableOpacity key={item.id} style={styles.button} onPress={() => navigation.navigate(item.screen)}>
               <Image source={item.image} style={styles.image} />
               <Text style={styles.buttonText}>{item.name}</Text>
             </TouchableOpacity>
@@ -70,20 +57,19 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
-    color:'#e3dac9',
+    color: '#e3dac9',
     padding: 10,
-    
   },
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    width: '100%', 
+    width: '100%',
     marginBottom: 20,
   },
   magnifyingGlass: {
-    width: 30, 
-    height: 30, 
-    marginRight: 5, 
+    width: 30,
+    height: 30,
+    marginRight: 5,
   },
   searchBar: {
     height: 40,
@@ -91,7 +77,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     paddingHorizontal: 10,
-    flex: 1, 
+    flex: 1,
   },
   gridContainer: {
     flexDirection: 'row',
@@ -103,18 +89,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#e3dac9',
     padding: 15,
     borderRadius: 5,
-    width: '48%', 
+    width: '48%',
     alignItems: 'center',
     marginVertical: 25,
-    elevation: 10, //shadow
+    elevation: 10,
   },
   image: {
-    width: 70, 
-    height: 70, 
-    marginBottom: 5, 
+    width: 70,
+    height: 70,
+    marginBottom: 5,
   },
   buttonText: {
-    color: '#000', 
+    color: '#000',
     fontSize: 16,
   },
   noResultsText: {
