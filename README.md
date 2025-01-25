@@ -4,6 +4,8 @@
 Application Idea:
 This app aims to help users organize and manage their grocery lists, making it easier for them to track what they need to buy and better manage groceries
 
+Demo: https://drive.google.com/file/d/1-KV_UaPoHCVKRVotiZfcfev3_oES6Fd3
+
 
 Techniques used :
 - React Native
@@ -46,9 +48,11 @@ Page navigations:
 - The products that the user has selected from the different categories appear.
 - The user can browse the selected products, and delete any product from the list.
 
+
 How to run:
 To run the application, use the following commands: npx expo start
 or expo start
+
 
 Additional information:
 1. If you create an account, it becomes easier to log in the next time using your email and password.
@@ -63,8 +67,10 @@ Additional information:
 
 6. The list can be deleted completely or products can be deleted individually.
 
+
 Future plans:
 - Adding previous user lists.
+- storing the items in the database
 - Adding the number of products, such as the ability to enter the number of tomatoes.
 - Adding more products and their types.
 - Suggestions for users about purchases.
