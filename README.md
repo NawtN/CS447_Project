@@ -1,83 +1,77 @@
-تطبيق قائمة تسوق البقالة (Grocery Shopping List App)
+ (Grocery Shopping List App)
 
-فكرة التطبيق:
-يهدف هذا التطبيق إلى مساعدة المستخدمين في تنظيم وإدارة قوائم التسوق الخاصة بهم، مما يسهل عليهم تتبع ما يحتاجون إلى شرائه من البقالة وإدارتها بشكل أفضل.
 
-التقنيات المستخدمة:
+Application Idea:
+This app aims to help users organize and manage their grocery lists, making it easier for them to track what they need to buy and better manage groceries
+
+
+Techniques used :
 - React Native
 - Android Studio
 - Visual Studio
-- Firebase (مع جميع الإصدارات المستخدمة)
+- Firebase
 
-هيكلة الصفحات:
-1. الرسوم المتحركة (Animation)
-2. تسجيل الدخول أو تسجيل حساب جديد (Sign In / Sign Up)
-3. الصفحة الرئيسية (Home)
-4. منتجات البقالة (Grocery Items)
-5. القائمة (List)
-6. الملف الشخصي (Profile)
-
-
+Page Structure:
+1. Animation
+2. Sign In / Log In
+3. Home
+4. Grocery Items
+5. List
+6. Profile
 
 
-تنقلات الصفحات : 
+Page navigations:
 
-1. الصفحة الرئيسية (Home)
-   - تتضمن قائمة بالمنتجات مصنفة إلى فئات مثل الفواكه، الخضروات، اللحوم، ومنتجات الألبان.
-   - يمكن للمستخدم اختيار الفئة التي يرغب في استكشافها.
+1. Home page
+- Includes a list of products classified into categories such as fruits, vegetables, meat, and dairy products.
+- The user can choose the category he wants to explore.
 
-2. صفحة الفواكه (Fruits)
-   - تعرض قائمة بالفواكه المتاحة مع صور لكل فاكهة.
-   - يوجد شريط بحث في أعلى الصفحة يسمح للمستخدم بالبحث عن فاكهة معينة.
-   - عند الضغط على أي فاكهة، يتم إضافتها للقائمة
+2. Fruits page
+- Displays a list of available fruits with pictures of each fruit.
+- There is a search bar at the top of the page that allows the user to search for a specific fruit.
+- When clicking on any fruit, it is added to the list
 
-3. صفحة الخضروات (Vegetables)
-   - مشابهة لصفحة الفواكه، تعرض قائمة بالخضروات المتاحة.
+3. Vegetables page
+- Similar to the fruits page, it displays a list of available vegetables.
 
-4. صفحة اللحوم (Meat)
-   - تعرض مجموعة من منتجات اللحوم مع صور وأسماء.
-   - تحتوي على شريط بحث لتسهيل العثور على نوع اللحم المطلوب.
+4. Meat page
+- Displays a group of meat products with pictures and names.
+- Contains a search bar to facilitate finding the type of meat required.
 
-5. صفحة منتجات الألبان (Dairy)
-   - تحتوي على قائمة بمنتجات الألبان، مع إمكانية البحث.
-   - الضغط على أي منتج ينقل المستخدم إلى قائمة المنتجات.
+5. Dairy page
+- Contains a list of dairy products, with the ability to search.
+- Clicking on any product takes the user to the list of products.
 
-6. صفحة القائمة (List)
-   - تظهر المنتجات التي قام المستخدم باختيارها من الفئات المختلفة.
-   - يمكن للمستخدم استعراض المنتجات المختارة، وحذف أي منتج من القائمة.
+6. List page
+- The products that the user has selected from the different categories appear.
+- The user can browse the selected products, and delete any product from the list.
 
-كيفية التشغيل:
-لتشغيل التطبيق، استخدم الأوامر التالية:npx expo start
-أوexpo start
+How to run:
+To run the application, use the following commands: npx expo start
+or expo start
 
-معلومات إضافية:
-1. في حالة إنشاء حساب، يصبح الدخول للمرات التالية أسهل باستخدام البريد الإلكتروني وكلمة المرور.
+Additional information:
+1. If you create an account, it becomes easier to log in the next time using your email and password.
 
-2.الحد الأدنى لطول كلمة المرور: 6 أحرف، والحد الأقصى: 10 أحرف
+2. Minimum password length: 6 characters, maximum: 10 characters
 
-3. لا يمكن تكرار أسماء الحسابات.
+3. Account names cannot be duplicated.
 
-4 يوجد شريط بحث للبحث عن المنتجات بسرعة.
+4. There is a search bar to quickly search for products.
 
-5. عندما يضغط المستخدم على صورة المنتج يتم نقله تلقائيا إلى القائمة.
+5. When the user clicks on the product image, he is automatically transferred to the list.
 
-6. يمكن حذف القائمة بالكامل أو حذف المنتجات فرديًا.
+6. The list can be deleted completely or products can be deleted individually.
 
-
-
-
-خطط مستقبلية:
-- إضافة القوائم السابقة للمستخدم.
-- إضافة عدد المنتجات، مثل إمكانية إدخال عدد الطماطم.
-- إضافة أسعار للمنتجات.
-- -عندما يتتم انشاء حساب تحفظ معلومات المستخدم بالبروفايل
-- إضافة المزيد من المنتجات وأنواعها.
-- اقتراحات للمستخدمين حول المشتريات.
+Future plans:
+- Adding previous user lists.
+- Adding the number of products, such as the ability to enter the number of tomatoes.
+- Adding more products and their types.
+- Suggestions for users about purchases.
 
 
-
-المصادر :
-
+References:
+ 
 https://docs.expo.dev/versions/latest/sdk/lottie/
 
 https://www.youtube.com/watch?v=eQufQVoqNoU&list=PLgvH3XVLO905DnI1SzxSQmsztY0eKowRV
