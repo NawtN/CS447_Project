@@ -5,8 +5,8 @@ import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, Alert } fro
 export default function Profile({ navigation }) {
   
   const [user, setUser] = useState({
-    name: 'nouf',
-    email: 'nouf@example.com',
+    name: 'your name',
+    email: '@example.com',
     password: '******', 
     profileImage: require('./assets/icon.png'), 
   });
